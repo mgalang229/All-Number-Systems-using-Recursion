@@ -36,6 +36,7 @@ int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 	
+	//hexadecimal->decimal->octal process
 	string s;
 	cin >> s;
 	int id=(int)s.size()-1;
