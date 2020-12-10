@@ -23,7 +23,7 @@ int power(int a, int b) {
 }
 
 int solve(int n) {
-	if (n) {
+	if(n) {
 		rem=n%10;
 		d+=rem*power(2, i++);
 		solve(n/10);
@@ -34,6 +34,7 @@ int solve(int n) {
 int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
+	
 	
 	ll n;
 	cin >> n;
