@@ -1,27 +1,30 @@
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
+
 using namespace std;
-using namespace __gnu_pbds;
 
-#define ll long long
-#define ar array
+int Power(int a, int b) {
+	int res = 1;
+	while (b > 0) {
+		if (b % 2 == 1) {
+			res *= a;
+		}
+		a *= a;
+		b /= 2;
+	}
+	return res;
+}
 
-typedef tree<int, null_type, less<int>, rb_tree_tag,
-tree_order_statistics_node_update> indexed_set;
-
-void solve(int n) {
-	if(n) {
-		solve(n/8);
-		cout << n%8;
+void Solve(int n) {
+	if (n > 0) {
+		Solve(n / 8);
+		cout << n % 8;
 	}
 }
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	
 	int n;
 	cin >> n;
-	solve(n);
-	cout << "\n";
+	Solve(n);
+	cout << '\n';
+	return 0;
 }
