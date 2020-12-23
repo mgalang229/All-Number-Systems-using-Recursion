@@ -1,35 +1,33 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-long long d = 0;
-int rem = 0;
-int i = 0;
+#define ll long long
+#define ar array
 
-int Power(int a, int b) {
-	int res = 1;
-	while (b > 0) {
-		if (b % 2 == 1) {
-			res *= a;
-		}
-		a *= a;
-		b /= 2;
+int d=0, rem=0, i=0;
+
+int power(int a, int b) {
+	int res=1;
+	while(b) {
+		if(b&1)
+			res*=a;
+		a*=a;
+		b/=2;
 	}
 	return res;
 }
 
-long long Solve(long long n) {
-	if (n > 0) {
-		rem = n % 10;
-		d += rem * Power(2, i++);
-		Solve(n / 10);
+int solve(ll n) {
+	if(n) {
+		rem=n%10;
+		d+=rem*power(2, i++);
+		solve(n/10);
 	}
 	return d;
 }
 
 int main() {
-	long long n;
+	ll n;
 	cin >> n;
-	cout << Solve(n) << '\n';
-	return 0;
+	cout << solve(n) << "\n";
 }
