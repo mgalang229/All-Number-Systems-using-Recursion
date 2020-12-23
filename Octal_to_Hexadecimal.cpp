@@ -26,8 +26,21 @@ int solve(int n) {
 	return d;
 }
 
+void solve2(int n) {
+	if(n) {
+		int tmp=n%16;
+		solve2(n/16);
+		if(tmp<10)
+			cout << char(48+tmp);
+		else
+			cout << char(55+tmp);
+	}
+}
+
 int main() {
+	//octal->decimal->hex process
 	int n;
 	cin >> n;
-	cout << solve(n) << "\n";
+	solve2(solve(n));
+	cout << "\n";
 }
