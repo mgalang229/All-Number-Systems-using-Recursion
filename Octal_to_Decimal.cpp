@@ -4,8 +4,6 @@ using namespace std;
 #define ll long long
 #define ar array
 
-int d=0, rem=0, i=0;
-
 int power(int a, int b) {
 	int res=1;
 	while(b) {
@@ -17,6 +15,8 @@ int power(int a, int b) {
 	return res;
 }
 
+int d=0, rem=0, i=0;
+
 int solve(int n) {
 	if(n) {
 		rem=n%10;
@@ -27,6 +27,9 @@ int solve(int n) {
 }
 
 int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	
 	int n;
 	cin >> n;
 	cout << solve(n) << "\n";
