@@ -1,26 +1,23 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-#define ll long long
-#define ar array
-
-void solve(int n) {
-	if(n) {
-		int tmp=n%16;
-		solve(n/16);
-		if(tmp<10)
-			cout << char(48+tmp);
-		else
-			cout << char(55+tmp);
+void Convert(int n) {
+	if (n > 0) {
+		int tmp = n % 16;
+		Convert(n / 16);
+		if (tmp < 10) {
+			cout << char(tmp + 48);
+		} else {
+			cout << char(tmp + 55);
+		}
 	}
 }
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
-	
 	int n;
 	cin >> n;
-	solve(n);
-	cout << "\n";
+	Convert(n);
+	cout << '\n';
+	return 0;
 }
