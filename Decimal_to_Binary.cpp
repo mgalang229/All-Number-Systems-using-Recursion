@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void Convert(long long n) {
+void Convert(int n) {
 	if (n > 0) {
 		Convert(n / 2);
 		cout << n % 2;
@@ -10,7 +10,7 @@ void Convert(long long n) {
 }
 
 int main() {
-	long long n;
+	int n;
 	cin >> n;
 	Convert(n);
 	cout << '\n';
